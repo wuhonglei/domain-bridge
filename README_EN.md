@@ -1,5 +1,7 @@
 # Domain Bridge
 
+> English | [中文](README.md)
+
 A Chrome browser extension that supports replacing the current domain with another domain and provides a right-click menu for quick switching functionality.
 
 ![Domain Bridge](./imgs/docs/en/popup.png)

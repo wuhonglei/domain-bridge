@@ -1,5 +1,7 @@
 # 域名桥接器 (Domain Bridge)
 
+> [English](README_EN.md) | 中文
+
 一个Chrome浏览器扩展，支持将当前域名替换为另一个域名，并提供右键菜单快速切换功能。
 
 ![Domain Bridge](./imgs/docs/zh/popup.png)
