@@ -7,7 +7,7 @@ export default defineConfig({
   manifest: {
     permissions: ['storage', 'contextMenus', 'tabs', 'activeTab'],
     host_permissions: ['<all_urls>'],
-    default_locale: 'zh-CN'
+    default_locale: 'zh_CN'
   },
   vite: () => ({
     plugins: [tailwindcss()]
