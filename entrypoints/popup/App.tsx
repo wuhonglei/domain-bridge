@@ -341,12 +341,6 @@ function App() {
             </div>
           )}
         </div>
-
-        <div className="text-center pt-2">
-          <p className="text-xs text-gray-400 leading-relaxed">
-            配置完成后，在对应网站右键即可看到域名切换选项
-          </p>
-        </div>
       </div>
     </div>
   );
