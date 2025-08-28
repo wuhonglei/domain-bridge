@@ -12,7 +12,7 @@
 
 ### 🎯 使用场景
 - GitHub.com → GitHub.dev (开发环境)
-- GitHub.com → DeepWiki.com (镜像站点)
+- GitHub.com → DeepWiki.com (文档站点)
 - 其他需要快速切换域名的场景
 
 ## 安装和使用
@@ -21,7 +21,7 @@
 
 1. 克隆项目
 ```bash
-git clone <repository-url>
+git clone git@github.com:wuhonglei/domain-bridge.git
 cd domain-bridge
 ```
 
@@ -85,7 +85,7 @@ entrypoints/
 
 ### 技术栈
 - **框架**: WXT (Web Extension Toolkit)
-- **前端**: React + TypeScript
+- **前端**: React + TypeScript + TailwindCSS
 - **存储**: Chrome Storage API
 - **权限**: contextMenus, storage, tabs, activeTab
 
@@ -113,8 +113,8 @@ entrypoints/
 
 ### 调试技巧
 - 使用 `console.log` 在控制台查看日志
-- 在 `chrome://extensions/` 中点击"检查视图"调试popup
-- 在网页开发者工具中查看content script的执行
+- 在 `chrome://extensions/` 中点击"检查视图"调试 background
+- 点击 icon 弹出 popup 后，右键 "检查" 调试 popup
 
 ## 许可证
 
