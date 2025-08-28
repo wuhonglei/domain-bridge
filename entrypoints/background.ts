@@ -1,5 +1,8 @@
 import { defineBackground } from 'wxt/utils/define-background';
 import { browser } from 'wxt/browser';
+import { createI18n } from '@wxt-dev/i18n';
+
+const { t } = createI18n(); // 国际化
 
 // 域名映射接口
 interface DomainMapping {
@@ -13,7 +16,7 @@ const defaultMappings: DomainMapping[] = [
 ];
 
 export default defineBackground(() => {
-  console.log('Domain Bridge Extension Started', { id: browser.runtime.id });
+  console.log(t('background.extensionStarted'), { id: browser.runtime.id });
 
   // 初始化存储
   initializeStorage();
@@ -34,10 +37,10 @@ async function initializeStorage() {
     const result = await browser.storage.local.get('domainMappings');
     if (!result.domainMappings) {
       await browser.storage.local.set({ domainMappings: defaultMappings });
-      console.log('Default domain mappings initialized');
+      console.log(t('background.defaultMappingsInitialized'));
     }
   } catch (error) {
-    console.error('Failed to initialize storage:', error);
+    console.error(t('background.failedToInitialize'), error);
   }
 }
 
@@ -57,14 +60,14 @@ async function createContextMenus() {
         const menuId = `${mapping.sourceDomain}_${targetDomain}`;
         browser.contextMenus.create({
           id: menuId,
-          title: `在 ${targetDomain} 中打开`,
+          title: t('mapping.openIn', [targetDomain.replace(/^www\./, '')]),
           contexts: ['page', 'link'],
           documentUrlPatterns: [`*://*.${mapping.sourceDomain}/*`]
         });
       });
     });
   } catch (error) {
-    console.error('Failed to create context menus:', error);
+    console.error(t('background.failedToCreateMenus'), error);
   }
 }
 
@@ -91,7 +94,7 @@ async function handleContextMenuClick(
       }
     }
   } catch (error) {
-    console.error('Failed to handle context menu click:', error);
+    console.error(t('background.failedToHandleClick'), error);
   }
 }
 
@@ -100,7 +103,7 @@ function handleStorageChange(changes: {
   [key: string]: chrome.storage.StorageChange;
 }) {
   if (changes.domainMappings) {
-    console.log('Domain mappings updated, recreating context menus');
+    console.log(t('background.contextMenusRecreated'));
     createContextMenus();
   }
 }

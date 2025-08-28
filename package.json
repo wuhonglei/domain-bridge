@@ -16,9 +16,10 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
-    "tailwindcss": "^4.1.12",
+    "@wxt-dev/i18n": "^0.2.4",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.12"
   },
   "devDependencies": {
     "@types/chrome": "^0.1.4",

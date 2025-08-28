@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { browser } from 'wxt/browser';
-import './App.css';
+import { createI18n } from '@wxt-dev/i18n';
+
+const { t } = createI18n(); // 国际化
 
 // 域名映射接口
 interface DomainMapping {
@@ -104,7 +106,7 @@ function App() {
   // 添加或更新映射
   const handleSubmit = () => {
     if (!newMapping.sourceDomain || newMapping.targetDomains.some((d) => !d)) {
-      alert('请填写完整的域名信息');
+      alert(t('form.validation.completeInfo'));
       return;
     }
 
@@ -112,7 +114,7 @@ function App() {
       d.trim()
     );
     if (filteredTargetDomains.length === 0) {
-      alert('请至少添加一个目标域名');
+      alert(t('form.validation.atLeastOneTarget'));
       return;
     }
 
@@ -170,7 +172,7 @@ function App() {
 
   // 删除映射
   const handleDelete = (index: number) => {
-    if (confirm('确定要删除这个域名映射吗？')) {
+    if (confirm(t('mapping.deleteConfirm'))) {
       const newMappings = mappings.filter((_, i) => i !== index);
       saveMappings(newMappings);
     }
@@ -195,27 +197,25 @@ function App() {
       <div className="w-full mx-auto space-y-4">
         <div className="text-center">
           <h1 className="text-xl font-semibold text-gray-900 mb-2">
-            域名桥接器
+            {t('app.title')}
           </h1>
           <p className="text-xs text-gray-500 leading-relaxed">
-            配置网站的域名映射，支持
-            <span className="font-semibold text-gray-600">右键菜单</span>
-            快速切换
+            {t('app.description')}
           </p>
         </div>
 
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
           <h2 className="text-sm font-medium text-gray-900 mb-3">
-            {editingIndex >= 0 ? '编辑域名映射' : '添加域名映射'}
+            {editingIndex >= 0 ? t('app.editMapping') : t('app.addMapping')}
           </h2>
 
           <div className="mb-3">
             <label className="block text-xs font-medium text-gray-700 mb-1.5">
-              源域名:
+              {t('form.sourceDomain')}
             </label>
             <input
               type="text"
-              placeholder="例如: github.com"
+              placeholder={t('form.sourceDomainPlaceholder')}
               value={newMapping.sourceDomain}
               onChange={(e) =>
                 setNewMapping((prev) => ({
@@ -229,13 +229,13 @@ function App() {
 
           <div className="mb-3">
             <label className="block text-xs font-medium text-gray-700 mb-1.5">
-              目标域名:
+              {t('form.targetDomains')}
             </label>
             {newMapping.targetDomains.map((domain, index) => (
               <div key={index} className="flex items-center mb-2">
                 <input
                   type="text"
-                  placeholder="例如: deepwiki.com"
+                  placeholder={t('form.targetDomainPlaceholder')}
                   value={domain}
                   onChange={(e) => updateTargetDomain(index, e.target.value)}
                   className="flex-1 px-2.5 py-1.5 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-colors"
@@ -268,7 +268,7 @@ function App() {
               onClick={addTargetDomain}
               className="w-full px-3 py-2 bg-blue-50 text-blue-700 text-sm font-medium rounded-md hover:bg-blue-100 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:ring-offset-1 transition-colors border border-blue-200"
             >
-              + 添加目标域名
+              {t('form.addTargetDomain')}
             </button>
           </div>
 
@@ -278,7 +278,7 @@ function App() {
               onClick={handleSubmit}
               className="flex-1 px-3 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:ring-offset-1 transition-colors"
             >
-              {editingIndex >= 0 ? '更新' : '添加'}
+              {editingIndex >= 0 ? t('common.update') : t('common.add')}
             </button>
             {editingIndex >= 0 && (
               <button
@@ -286,7 +286,7 @@ function App() {
                 onClick={handleCancel}
                 className="px-3 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-md hover:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-gray-500 focus:ring-offset-1 transition-colors"
               >
-                取消
+                {t('common.cancel')}
               </button>
             )}
           </div>
@@ -294,11 +294,11 @@ function App() {
 
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
           <h2 className="text-sm font-medium text-gray-900 mb-3">
-            当前域名映射
+            {t('app.currentMappings')}
           </h2>
           {mappings.length === 0 ? (
             <p className="text-gray-400 text-center py-6 text-sm">
-              暂无域名映射配置
+              {t('app.noMappings')}
             </p>
           ) : (
             <div className="space-y-3">
@@ -327,13 +327,13 @@ function App() {
                       onClick={() => handleEdit(index)}
                       className="px-3 py-1.5 bg-blue-600 text-white text-xs font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:ring-offset-1 transition-colors"
                     >
-                      编辑
+                      {t('common.edit')}
                     </button>
                     <button
                       onClick={() => handleDelete(index)}
                       className="px-3 py-1.5 bg-red-600 text-white text-xs font-medium rounded-md hover:bg-red-700 focus:outline-none focus:ring-1 focus:ring-red-500 focus:ring-offset-1 transition-colors"
                     >
-                      删除
+                      {t('common.delete')}
                     </button>
                   </div>
                 </div>
