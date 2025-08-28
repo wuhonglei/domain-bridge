@@ -2,6 +2,9 @@
 
 一个Chrome浏览器扩展，支持将当前域名替换为另一个域名，并提供右键菜单快速切换功能。
 
+![Domain Bridge](./imgs/docs/popup.png)
+![Domain Bridge](./imgs/docs/right_context.png)
+
 ## 功能特性
 
 ### 🚀 核心功能
