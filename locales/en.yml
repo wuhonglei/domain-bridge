@@ -1,47 +1,43 @@
-# English Internationalization
 common:
-  add: "Add"
-  edit: "Edit"
-  delete: "Delete"
-  cancel: "Cancel"
-  update: "Update"
-  save: "Save"
-  loading: "Loading..."
-  error: "Error"
-  success: "Success"
-  confirm: "Confirm"
-  close: "Close"
-
+  add: Add
+  edit: Edit
+  delete: Delete
+  cancel: Cancel
+  update: Update
+  save: Save
+  loading: Loading...
+  error: Error
+  success: Success
+  confirm: Confirm
+  close: Close
 app:
-  title: "Domain Bridge"
-  description: "Configure website domain mappings with right-click menu quick switching support"
-  addMapping: "Add Domain Mapping"
-  editMapping: "Edit Domain Mapping"
-  currentMappings: "Current Domain Mappings"
-  noMappings: "No domain mappings configured"
-
+  title: Domain Bridge
+  description: >-
+    Configure website domain mappings with right-click menu quick switching
+    support
+  addMapping: Add Domain Mapping
+  editMapping: Edit Domain Mapping
+  currentMappings: Current Domain Mappings
+  noMappings: No domain mappings configured
 form:
   sourceDomain: "Source Domain:"
   targetDomains: "Target Domains:"
-  sourceDomainPlaceholder: "e.g., github.com"
-  targetDomainPlaceholder: "e.g., deepwiki.com"
-  addTargetDomain: "+ Add Target Domain"
+  sourceDomainPlaceholder: e.g., github.com
+  targetDomainPlaceholder: e.g., deepwiki.com
+  addTargetDomain: + Add Target Domain
   validation:
-    completeInfo: "Please fill in complete domain information"
-    atLeastOneTarget: "Please add at least one target domain"
-
+    completeInfo: Please fill in complete domain information
+    atLeastOneTarget: Please add at least one target domain
 mapping:
-  openIn: "Open in $1"
-  deleteConfirm: "Are you sure you want to delete this domain mapping?"
-
+  openIn: Open in $1
+  deleteConfirm: Are you sure you want to delete this domain mapping?
 background:
-  extensionStarted: "Domain Bridge Extension Started"
-  defaultMappingsInitialized: "Default domain mappings initialized"
-  contextMenusRecreated: "Domain mappings updated, recreating context menus"
-  failedToInitialize: "Failed to initialize storage"
-  failedToCreateMenus: "Failed to create context menus"
-  failedToHandleClick: "Failed to handle context menu click"
-
+  extensionStarted: Domain Bridge Extension Started
+  defaultMappingsInitialized: Default domain mappings initialized
+  contextMenusRecreated: Domain mappings updated, recreating context menus
+  failedToInitialize: Failed to initialize storage
+  failedToCreateMenus: Failed to create context menus
+  failedToHandleClick: Failed to handle context menu click
 content:
-  scriptLoaded: "Domain Bridge Content Script Loaded"
-  currentDomain: "Current domain"
+  scriptLoaded: Domain Bridge Content Script Loaded
+  currentDomain: Current domain

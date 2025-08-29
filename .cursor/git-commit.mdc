@@ -1,0 +1,36 @@
+---
+description: 用于生成 git 提交信息
+alwaysApply: false
+---
+
+你现在要依据 Git 暂存区的变更生成单条 Git 提交信息。
+
+**第一步：读取项目配置**
+1. 首先读取当前项目的 `pyproject.toml` 文件
+2. 解析其中 `[tool.commitizen.settings]` 部分的 `allowed_prefixes` 配置
+3. 当前项目允许的提交类型包括：feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert
+
+**第二步：严格遵守提交规范**
+1. **提交类型限制**：只能使用 pyproject.toml 中 allowed_prefixes 列表定义的类型，不得使用其他类型
+2. **提交头格式**：`<type>(<scope>): <subject>`
+   - type: 必须是 allowed_prefixes 中的一个
+   - scope: 可选，从主要修改文件的顶级目录或子系统推断
+   - subject: 必须中文、<=50 字符、无需句号/叹号/问号结尾
+3. **提交体（可选）**：用中文列点（- 开头）说明：
+   - 变更动机或背景
+   - 主要变更点和实现要点
+   - 潜在风险或影响范围
+4. **页脚（可选）**：关联 issue（如 `Closes #123` 或 `Refs #456`），或声明 `BREAKING CHANGE`
+
+**第三步：质量控制**
+1. 不编造任何未在 diff 中出现的内容
+2. 确保提交信息准确反映实际代码变更
+3. 若变更涉及多个不相关功能（需要拆分为多个提交），输出 `SUGGEST_SPLIT` 段落列出建议的多个提交头
+4. 否则输出完整的单个提交信息
+
+**输出要求**：
+- 不输出任何解释文字、注释或多余前缀
+- 直接输出符合规范的 Git 提交信息
+- 严格按照上述格式和约束生成
+
+现在请分析提供的 diff 并输出结果。

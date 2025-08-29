@@ -1,0 +1,41 @@
+common:
+  add: 添加
+  edit: 编辑
+  delete: 删除
+  cancel: 取消
+  update: 更新
+  save: 保存
+  loading: 加载中...
+  error: 错误
+  success: 成功
+  confirm: 确认
+  close: 关闭
+app:
+  title: 域名桥接器
+  description: 配置网站的域名映射，支持右键菜单快速切换
+  addMapping: 添加域名映射
+  editMapping: 编辑域名映射
+  currentMappings: 当前域名映射
+  noMappings: 暂无域名映射配置
+form:
+  sourceDomain: "源域名:"
+  targetDomains: "目标域名:"
+  sourceDomainPlaceholder: "例如: github.com"
+  targetDomainPlaceholder: "例如: deepwiki.com"
+  addTargetDomain: + 添加目标域名
+  validation:
+    completeInfo: 请填写完整的域名信息
+    atLeastOneTarget: 请至少添加一个目标域名
+mapping:
+  openIn: 在 $1 中打开
+  deleteConfirm: 确定要删除这个域名映射吗？
+background:
+  extensionStarted: 域名桥接器扩展已启动
+  defaultMappingsInitialized: 默认域名映射已初始化
+  contextMenusRecreated: 域名映射已更新，正在重新创建右键菜单
+  failedToInitialize: 初始化存储失败
+  failedToCreateMenus: 创建右键菜单失败
+  failedToHandleClick: 处理右键菜单点击失败
+content:
+  scriptLoaded: 域名桥接器内容脚本已加载
+  currentDomain: 当前域名
