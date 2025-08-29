@@ -1,5 +1,9 @@
 # 域名桥接器 (Domain Bridge)
 
+<p align="center">
+  <img src="./public/icon/256.png" width="180" alt="Project Logo"/>
+</p>
+
 > [English](README_EN.md) | 中文
 
 一个Chrome浏览器扩展，支持将当前域名替换为另一个域名，并提供右键菜单快速切换功能。
@@ -128,12 +132,3 @@ MIT License
 ## 贡献
 
 欢迎提交Issue和Pull Request来改进这个扩展！
-
-## 更新日志
-
-### v0.0.1
-- 初始版本发布
-- 支持基本的域名映射配置
-- 实现右键菜单功能
-- 添加页面提示功能
-- 国际化显示(英语、中文)

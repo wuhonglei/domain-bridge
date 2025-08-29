@@ -1,4 +1,8 @@
-# Domain Bridge
+# 域名桥接器 (Domain Bridge)
+
+<p align="center">
+  <img src="./public/icon/256.png" width="180" alt="Project Logo"/>
+</p>
 
 > English | [中文](README.md)
 
@@ -128,15 +132,6 @@ MIT License
 ## Contributing
 
 Welcome to submit Issues and Pull Requests to improve this extension!
-
-## Changelog
-
-### v0.0.1
-- Initial version release
-- Support for basic domain mapping configuration
-- Implementation of right-click menu functionality
-- Addition of page hint functionality
-- Internationalization support (English, Chinese)
 
 ## Project Status
 
